@@ -11,10 +11,10 @@ export function Cart({ navigation }) {
             setTotal(getTotalPrice())
         })
         return (
-            <View style={styles.cartLineTotal}>
+            <SafeAreaView style={styles.cartLineTotal}>
                 <Text style={[styles.lineLeft, styles.lineTotal]}>Total</Text>
                 <Text style={styles.mainTotal}>{'\u20A8'} {total}</Text>
-            </View>
+            </SafeAreaView>
         )
     }
 
@@ -22,7 +22,7 @@ export function Cart({ navigation }) {
         return (
             <>
                 <SafeAreaView style={styles.cartLine}>
-                    <Image style={styles.image} source={{uri: item.product.images[0]}} />
+                    <Image style={styles.image} source={{ uri: item.product.images[0] }} />
                     <Text style={styles.lineLeft}>{item.product.name} x {item.qty} <Text style={styles.productTotal}>{'\u20A8'} {item.totalPrice}</Text></Text>
                 </SafeAreaView>
             </>
@@ -30,14 +30,16 @@ export function Cart({ navigation }) {
     }
 
     return (
-        <FlatList
-            style={styles.itemsList}
-            contentContainerStyle={styles.itemsListContainer}
-            data={items}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.product.id.toString()}
-            ListFooterComponent={Totals}
-        />
+        <SafeAreaView>
+            <FlatList
+                style={styles.itemsList}
+                contentContainerStyle={styles.itemsListContainer}
+                data={items}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.product.id.toString()}
+                ListFooterComponent={Totals}
+            />
+        </SafeAreaView>
     )
 
 }
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '80%',
         paddingVertical: 10,
-        marginTop: '20px'
+        marginTop: 15
     },
     image: {
         width: '25%',
@@ -57,7 +59,8 @@ const styles = StyleSheet.create({
     cartLineTotal: {
         flexDirection: 'row',
         borderTopColor: '#dddddd',
-        borderTopWidth: 1
+        borderTopWidth: 1,
+        marginTop: 25
     },
     productTotal: {
         fontWeight: 'bold'
@@ -85,7 +88,8 @@ const styles = StyleSheet.create({
         textAlign: 'right'
     },
     itemsList: {
-        backgroundColor: '#eeeeee'
+        backgroundColor: '#eeeeee',
+        marginTop: 10
     },
     itemsListContainer: {
         backgroundColor: '#eeeeee',

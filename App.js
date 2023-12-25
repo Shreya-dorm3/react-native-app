@@ -17,7 +17,7 @@ function App() {
   return (
     <CartProvider>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{ headerShown: true }}>
           <Tab.Screen name="Products" component={Home} />
           {/* <Tab.Screen name="ProductDetails" component={ProductDetails} options={({ navigation }) => ({ title: 'Product Detail', headerRight: () => <CartIcon navigation={navigation} /> })} /> */}
           <Tab.Screen name="Cart" component={Cart} options={({ navigation }) => ({ title: 'Cart', headerRight: () => <CartIcon navigation={navigation} /> })} />
