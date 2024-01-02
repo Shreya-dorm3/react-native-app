@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-config": "^0.10.7",
     "@expo/webpack-config": "^19.0.0",
     "@react-navigation/material-bottom-tabs": "^6.2.19",
     "@react-navigation/native": "^6.1.9",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@react-native/metro-config": "^0.72.11",
     "metro-config": "^0.80.2"
   },
   "private": true
