@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-sample",
+    "name": "reactNative",
     "slug": "react-native-sample",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -26,5 +26,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
-  }
+  },
+  "name": "AndroidNative",
+  "displayName": "AndroidNative"
 }
